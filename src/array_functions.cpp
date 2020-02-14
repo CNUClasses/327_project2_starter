@@ -13,8 +13,9 @@
 #include <string>
 #include "array_functions.h"
 #include "constants.h"
-typedef std::string string;
-
+//typedef std::string string;
+//typedef std::fstream fstream;
+using namespace std;
 //============================================================================
 
 //============================================================================
@@ -51,13 +52,20 @@ int getArraySize(){
 string getArrayWordAt(int i){
 	return wordArray[i].word; //returns the word at index i
 }
-int getArrayWord_NumbOccur_At(int i);
+int getArrayWord_NumbOccur_At(int i){
+	return wordArray[i].number_occurence;
+}
 
 /*loop through whole file, one line at a time
  * call processLine on each line
  * returns false: myfstream is not open
  *         true: otherwise*/
-bool processFile(std::fstream &myfstream);
+bool processFile(std::fstream &myfstream){
+	string input = "";
+	istringstream ss(input);
+	string lineout;
+
+}
 
 /*take 1 line and extract all the tokens from it
 feed each token to processToken for recording*/
