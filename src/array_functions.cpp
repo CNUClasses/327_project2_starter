@@ -21,32 +21,36 @@ typedef std::string string;
 //	stuff you will need
 //============================================================================
 //TODO define a structure to track words and number of times they occur
-typedef struct wordCnt{
+typedef struct wordStruct{
 	string word;
 	int number_occurence;
 }wordStruct;
 
 //TODO add a global array of entry structs (global to this file)
-wordStruct wordArray[];
+ wordStruct wordArray[50];
 
 //TODO add variable to keep track of next available slot in array
-
+int nextOpenSlot = 0;
 //TODO define all functions in header file
 //zero out array that tracks words and their occurrences
 void clearArray(){
-	for(int i = 0; i<wordArray.getArraySize(); i++){
-	wordArray[]
+	for(int i = 0; i<nextOpenSlot; i++){
+	wordArray[i].word = "";
+	wordArray[i].number_occurence= 0;
 	}
+	nextOpenSlot = 0;
 
 }
 
 //how many unique words are in array
 int getArraySize(){
-	return number_occurence;
+	return nextOpenSlot;
 }
 
 //get data at a particular location
-std::string getArrayWordAt(int i);
+string getArrayWordAt(int i){
+	return wordArray[i].word; //returns the word at index i
+}
 int getArrayWord_NumbOccur_At(int i);
 
 /*loop through whole file, one line at a time
