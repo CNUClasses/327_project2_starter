@@ -23,11 +23,13 @@ using namespace constants;
 using namespace std;
 //using namespace utilities;
 
+//TODO define a structure to track words and number of times they occur
 struct entry { //struct used to store a word with the number of occurences
 	string word = "";
 	int number_occurences = 0;
 };
 
+//TODO add a global array of entry structs (global to this file)
 entry g_array[constants::MAX_WORDS]; //global array of entries
 
 void clearArray() {
@@ -39,12 +41,9 @@ void clearArray() {
 
 }
 
-//TODO define a structure to track words and number of times they occur
-
-//TODO add a global array of entry structs (global to this file)
 
 //TODO add variable to keep track of next available slot in array
-
+int nextOpenSlot = 0;
 //TODO define all functions in header file
 
 std::string fileName = "testdata_full.txt";
